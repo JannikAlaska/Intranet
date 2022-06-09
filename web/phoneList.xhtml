@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <h:head>
+        <script src="https://kit.fontawesome.com/c9fe651a5a.js" crossorigin="anonymous"></script>
+        <title>News</title>
+    </h:head>
+    <h:body styleClass="Bimage">
+        
+            <h:panelGrid columns="3" columnClasses="links, mitte, rechts">
+            
+                <h:form>
+                    <h:commandLink action="#{navigationController.home()}">
+                        <h1><img src="resources/images/wappen.png" width="40px"></img> Intranet</h1> 
+                    </h:commandLink>
+                </h:form>
+
+                <h:outputText value=" " />
+                <h:outputLink class="link" value="http://support/ticket/" target="_blank">
+                    <i class="fas fa-headset"></i> Support
+                </h:outputLink>
+            </h:panelGrid>
+        
+        <h2>Telefonliste</h2><br/><br/>
+        <h1><a style="color: red" href="https://www.journaldev.com/7068/jsf-database-example-mysql-jdbc">siehe Hier für DB-Einbindung</a></h1>
+        <h:form>    
+            <h:dataTable var="eintrag" value="#{PhoneNr.numbersLst}" id="phoneList" rowClasses="phone1, phone2" columnClasses="phonelinks, phonerechts">
+                <h:column><h:outputText value="#{eintrag.mitarbeiter}"/></h:column>
+                <h:column>
+                    <h:outputLink value="tel:#{eintrag.number}" styleClass="phoneLink">
+                        <h:outputText value="#{eintrag.number}"/>
+                    </h:outputLink>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <h:head>
+        <script src="https://kit.fontawesome.com/c9fe651a5a.js" crossorigin="anonymous"></script>
+        <title>News</title>
+    </h:head>
+    <h:body styleClass="Bimage">
+        
+            <h:panelGrid columns="3" columnClasses="links, mitte, rechts">
+            
+                <h:form>
+                    <h:commandLink action="#{navigationController.home()}">
+                        <h1><img src="resources/images/wappen.png" width="40px"></img> Intranet</h1> 
+                    </h:commandLink>
+                </h:form>
+
+                <h:outputText value=" " />
+                <h:outputLink class="link" value="http://support/ticket/" target="_blank">
+                    <i class="fas fa-headset"></i> Support
+                </h:outputLink>
+            </h:panelGrid>
+        
+        <h2>Gemeinsame Dokumente</h2><br/><br/>
+        <h1 style="color:red">Hinweis! Dokumenteinbindung per Link aus Datenbank auslesen, entweder in resources-Ordner oder nur Link auf Ablage/Verwaltung Intern</h1>
+    </h:body>
+</html>
+

@@ -1,0 +1,342 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19.05.2022, 08:56:27
+    Author     : Berthold
+*/
+
+body{
+    font-family: arial;
+}
+
+.Bimage{
+    background-image: url(resources/images/background.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    padding: 0 5%;
+}
+
+/**************************************************
+*
+* Header
+*
+**************************************************/
+
+h1{
+    font-size: 26px;
+    color: white;
+}
+
+h2{
+    font-size: 22px;
+    color: white;
+}
+
+.link {
+    display: relative;
+    /*width: 80%;*/
+    font-size: 0.8vw;
+}
+
+.link:hover {
+    color: #7E2833;
+}
+
+
+td.links{
+    width: 40%;
+   /* padding-left: 25px; */
+    padding-right: 200px;
+}
+
+td.mitte {
+  width:400px;  
+}
+
+td.rechts {
+    text-align: right;
+    width: 40%;
+    padding-right: 5%;
+    padding-left: 30%;
+}
+
+/**************************************************
+*
+* Body
+*
+**************************************************/
+
+#Titel{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+table.news1{
+    color: black;
+    position: relative;
+    width: 100%;
+    /*margin: 0 10%; */
+    background: #000;
+    border-radius: 5px;
+}
+
+table.news2{
+    color: black;
+    position: relative;
+    width: 100%;
+    /* margin: 0 10%; */
+    background: rgba(255,255,255, 0.6);
+    border-radius: 5px;
+}
+
+td.newslinks{
+    text-align: left;
+    width: 80%;
+    padding:  3% 5%; 
+}
+
+td.newsrechts{
+    text-align: right;
+    width: 20%;
+    padding: 2% 4%; 
+}
+
+table#phoneList{
+    width: 100%;
+    border-radius: 5px;
+}
+
+tr.phone1{
+    color: black;
+    position: relative;
+    width: 100%;
+    /*margin: 0 10%; */
+    background: rgba(255,255,255, 0.6);
+}
+
+tr.phone2{
+    color: black;
+    position: relative;
+    width: 100%;
+    /* margin: 0 10%; */
+    background: rgba(255,255,255, 0.4);
+}
+
+td.phonelinks{
+    text-align: left;
+    width: 50%;
+    padding:  1% 2%;
+    color: white;
+    font-weight: bold;
+}
+
+td.phonerechts{
+    text-align: right;
+    width: 50%;
+    padding: 1% 2%; 
+}
+
+table#metainfo{
+    position: relative;
+    width: 100%;
+    text-align: right;
+}
+
+td.bodylinks{
+    width: 43%;
+    text-align: left;
+}
+
+td.bodymitte {
+    width: 14%;
+    /*height: auto;
+    display: inline-block; */
+}
+
+td.bodyrechts {
+    width: 43%;
+    text-align: right;
+}
+
+a.phoneLink{
+    position: relative;
+    height: 100%;
+    font-size: 16px;
+}
+
+.wappen {
+    width: 90%;
+    display: inline-block;
+    position: relative;
+    margin: 0 5%;
+    /*left: 50%;
+    top: 50%;
+    margin-top: -175px;
+    margin-left: -175px;*/
+    opacity: 0.7;
+    transition: all 400ms ease-in-out;
+}
+
+.wappen:hover {
+    opacity: 1;
+    transition: all 400ms ease-in-out;
+    width: 100%;
+    margin: 50% 0%;
+}
+
+
+
+/**************************************************
+*
+* Menü
+*
+**************************************************/
+
+ol, ul {
+    padding: 30% 0%;
+    list-style: none;
+
+}
+li {
+    display: inline-block;
+    padding: 18px 0;
+    vertical-align: middle;
+    /*width: 730px;
+    height: 20%;*/
+}
+
+li.item{
+    width: 100%;
+}
+
+a {
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    text-decoration: none;
+    transition: color 0.1s, background-color 0.1s;
+    color: white;
+    /*letter-spacing: 0.5px;*/
+    font-size: 1.2vw;
+    line-height: 100%;
+    font-weight: 700;
+    /*text-transform: uppercase;*/
+    position: relative;
+    display: block;
+    padding: 1% 0%;
+    transition: color 0.1s,background-color 0.1s,padding 0.2s ease-in;
+}
+
+/*b.menuelinks {
+    position: relative;
+    display: block;    
+    width: 700px;
+    padding: 16px 40px;
+}
+
+b.menuerechts {
+    position: relative;
+    display: block;
+    /*width: 680px;
+    padding: 16px 40px 16px 10px;
+}
+*/
+
+/**************************************************
+*
+* Animationen
+*
+**************************************************/
+
+
+a:hover, a:focus, a:active {
+    color: #7E2833;
+    opacity: 90%;
+    text-decoration: none;
+}
+
+a:hover, a:focus, a:active {
+    color: #7E2833;
+    opacity: 90%;
+    text-decoration: none;
+}
+
+a:not(:hover) {
+    color: white;
+}
+
+a.blinks::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    height: 5%;
+    width: 100%;
+    background-color: #000;
+    transform-origin: left top;
+    transform: scale(0, 1);
+    transition: color 0.2s,transform 0.3s ease-out;
+}
+
+a.brechts::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    height: 5%;
+    width: 100%;
+    background-color: #000;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: color 0.2s,transform 0.3s ease-out;
+}
+
+a:active::before {
+    background-color: #000;
+}
+
+a.blinks:hover::before, a:focus::before {
+    transform-origin: right top;
+    transform: scale(1, 1);
+}
+
+a.brechts:hover::before, a:focus::before {
+    transform-origin: left top;
+    transform: scale(1, 1);
+}
+
+a.brechts:not(:hover)::before{
+    color: white;
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    height: 5%;
+    width: 100%;
+    background-color: #000;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: color 0.2s,transform 0.3s ease-out; 
+}
+
+a.blinks:not(:hover)::before{
+    color: white;
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    height: 5%;
+    width: 100%;
+    background-color: #000;
+    transform-origin: left top;
+    transform: scale(0, 1);
+    transition: color 0.2s,transform 0.3s ease-out; 
+}

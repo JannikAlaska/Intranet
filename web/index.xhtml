@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+
+    <h:head>
+        <link rel="icon" type="image/png" href="resources/images/wappen.png"/>
+        <script src="https://kit.fontawesome.com/c9fe651a5a.js" crossorigin="anonymous"></script>
+        <title>Intranet</title>
+    </h:head>
+
+<!--Header-->
+    <h:body styleClass="Bimage">
+        <h:panelGrid columns="3" columnClasses="links, mitte, rechts">
+            <h:form>
+                <h:commandLink action="#{navigationController.home()}">
+                    <h1><img src="resources/images/wappen.png" width="40px"></img> Intranet</h1> 
+                </h:commandLink>
+            </h:form>
+            <h:outputText value=" " />
+            <h:outputLink class="link" value="http://support/ticket/" target="_blank">
+                <i class="fas fa-headset"></i> Support
+            </h:outputLink>                         
+        </h:panelGrid>
+
+        
+<!-- Main Body -->
+        <h:panelGrid columns="3" columnClasses="bodylinks, bodymitte, bodyrechts">
+            <ui:fragment>
+                <nav>
+                    <ul class="menuelist">
+                       <li class="item">
+                          <h:form>
+                              <h:commandLink styleClass="blinks" action="#{navigationController.news()}">
+                                <i class="fa-solid fa-newspaper"></i>
+                                &nbsp;
+                                News 
+                              </h:commandLink>
+                          </h:form>
+                      </li>
+                      <li class="item">
+                          <h:form>
+                              <h:commandLink styleClass="blinks" action="#{navigationController.commonDocuments()}">
+                                <i class="fa-solid fa-file-lines"></i>
+                                &nbsp;
+                                Gemeinsame Dokumente (Dienstanweisungen, Vorlagen, ...) 
+                              </h:commandLink>
+                          </h:form>
+                      </li>
+                      <li class="item">
+                          <h:form>
+                              <h:commandLink styleClass="blinks" action="#{navigationController.phoneList()}">
+                                <i class="fa-solid fa-phone"></i>
+                                &nbsp;
+                                Telefonliste
+                              </h:commandLink>
+                          </h:form>
+                      </li>
+                    </ul>
+                </nav>
+            </ui:fragment>
+ 
+            
+            
+            <h:outputLink styleClass="homepageLink" value="https://www.stadt-ilsenburg.de/" target="_blank">   
+                <h:graphicImage alt="Wappen" styleClass="wappen" value="resources/images/oie_transparent2.png"/>
+            </h:outputLink>
+  
+            
+
+            <ui:fragment>
+                <nav>
+                    <ul>
+                      <li class="item" id="link4">
+                          <a class="brechts" href="#">
+                            Digitaler Urlaubschein &amp; Digitaler Stundenzettel
+                            &nbsp;
+                            <i class="fa-solid fa-umbrella-beach"></i>
+
+                          </a>
+                      </li>
+                        
+                        <h:outputLink styleClass="brechts" value="http://support/ticket/kb/index.php" target="__blank">
+                            Wissens-Datenbank
+                            &nbsp;
+                            <i class="fa-solid fa-brain"></i>
+                        </h:outputLink>
+
+                      <li class="item" id="link6">
+                          <a class="brechts" href="#">
+                              Platzhalter für weitere Menüpunkte
+                              &nbsp;
+                              <i class="fa-solid fa-question"></i>
+                          </a>
+                      </li>
+                    </ul>
+                </nav>
+            </ui:fragment>
+        </h:panelGrid>
+    </h:body>
+</html>
+
