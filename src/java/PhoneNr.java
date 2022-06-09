@@ -31,13 +31,17 @@ public class PhoneNr {
     
     public List<Numbers> getNumbersLst(){
         EntityManager em = emf.createEntityManager();
-        
-        Query q;
-        q = em.createQuery("select a from Numbers a");
-        List<Numbers> numbersResult = q.getResultList();
-        
-        return numbersResult;
-    }
-    
-    
+        try{
+            Query q;
+            q = em.createQuery("select a from Numbers a");
+            List<Numbers> numbersResult = q.getResultList();
+
+            return numbersResult;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            if (em != null) em.close();
+        }
+    } 
 }
