@@ -1,2 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/Intranet"/>
+<Context path="/Intranet">
+  <Resource auth="Container" driverClassName="org.apache.derby.jdbc.ClientDriver" maxActive="20" maxIdle="10" maxWait="-1" name="Intranet" password="ri1Nole#" type="javax.sql.DataSource" url="jdbc:derby://localhost:1527/Intranet" username="berthold"/>
+  <Resource auth="Container" driverClassName="org.apache.derby.jdbc.ClientDriver" maxActive="20" maxIdle="10" maxWait="-1" name="Intranet Hibernate" password="ri1Nole#" type="javax.sql.DataSource" url="jdbc:derby://localhost:1527/Intranet" username="berthold"/>
+</Context>
