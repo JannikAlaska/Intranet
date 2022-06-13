@@ -5,9 +5,8 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <link href="style.css" rel="stylesheet" type="text/css"/>
     <h:head>
-        <link rel="icon" type="image/png" href="resources/images/wappen.png"/>
         <script src="https://kit.fontawesome.com/c9fe651a5a.js" crossorigin="anonymous"></script>
-        <title>Telefonliste</title>
+        <title>News</title>
     </h:head>
     <h:body styleClass="Bimage">
         
@@ -28,21 +27,15 @@
         <h2>Telefonliste</h2><br/><br/>
         <h1><a style="color: red" href="https://www.journaldev.com/7068/jsf-database-example-mysql-jdbc">siehe Hier für DB-Einbindung</a></h1>
         <h1><h:outputText value="#{phonenr.message}"/></h1>
-        <h:form id="numbersList">    
-            <h:dataTable var="eintrag" value="#{phonenr.numbersLst}" id="phoneList" rowClasses="phone1, phone2" columnClasses="phonelinks, phonerechts">
-                <h:column><f:facet name = "header"><h4>Name</h4></f:facet>
-                    <h:outputText value="#{eintrag.nachname}, #{eintrag.vorname}"/></h:column>
-                <h:column>
-                    <f:facet name = "header"><h4>Telefonnummer</h4></f:facet>
-                    <h:outputLink value="tel:#{eintrag.number}" styleClass="phoneLink">
-                        <i class="fas fa-phone"/><h:outputText value=" #{eintrag.number}"/>
-                    </h:outputLink>
-                </h:column>
-            </h:dataTable>
-        </h:form>
         <h:form>
-            <h:commandLink id="neueTelefonnummer" action="#{navigationController.add()}"><i class="fas fa-plus"/> Telefonnummer hinzufügen</h:commandLink>
+            <h:panelGrid columns="2">
+                <h:outputText value="Nachname: "/> <h:inputText value="#{numbers.nachname}"/>
+                <h:outputText value="Vorname: "/><h:inputText value="#{numbers.vorname}"/>
+                <h:outputText value="Telefonnummer: "/><h:inputText value="#{numbers.number}"/>
+                <h:outputText value="Faxnummer: "/><h:inputText value="#{numbers.fax}"/>
+            </h:panelGrid>
+            <h:commandButton value="Speichern" type="save" action="#{numbers.speichern()}"></h:commandButton>
         </h:form>
-     </h:body>
+    </h:body>
 </html>
 

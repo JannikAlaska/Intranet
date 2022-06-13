@@ -10,6 +10,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ApplicationScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
@@ -58,5 +59,18 @@ public class Phonenr {
     
     public void setMessage(String message){
         this.message=message;
+    }
+    
+    public static Phonenr getInstance(){
+        return instance;
+    }
+    
+    void savePhonenr(Numbers newNumber){
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction t = em.getTransaction();
+        t.begin();
+        em.persist(newNumber);
+        t.commit();
+        em.close();
     }
 }

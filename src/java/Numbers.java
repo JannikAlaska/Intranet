@@ -31,6 +31,7 @@ public class Numbers implements Serializable{
     private String nachname;
     private String number;
     private String fax;
+    public Numbers newNumber = null;
     
     /**
      * Creates a new instance of Numbers
@@ -79,6 +80,13 @@ public class Numbers implements Serializable{
         return fax;
     }  
     
+    public Numbers getNewNumber(){
+        if (null == newNumber){
+            this.newNumber=new Numbers();
+        }   
+        return this.newNumber;
+    }
+    
     //*Setter-Methoden
     
     public void setId(int id){
@@ -103,6 +111,14 @@ public class Numbers implements Serializable{
     
     public void setFax(String fax){
         this.fax=fax;
+    }
+    
+   
+    public String speichern(){
+        newNumber=new Numbers(mitarbeiter, nachname, vorname, number, fax);
+        Phonenr.getInstance().savePhonenr(newNumber);
+        
+        return null;
     }
     
 }

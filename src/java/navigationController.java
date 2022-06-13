@@ -37,4 +37,8 @@ public class navigationController {
    public String wissensDB(){
        return "http://support/ticket/kb/index.phphttp://support/ticket/kb/index.php";
    }
+   
+   public String add(){
+       return "editphonenr?faces-redirect=true";
+   }
 }
