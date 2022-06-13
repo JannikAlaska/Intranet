@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <link href="style.css" rel="stylesheet" type="text/css"/>
     <h:head>
         <script src="https://kit.fontawesome.com/c9fe651a5a.js" crossorigin="anonymous"></script>
@@ -28,10 +29,12 @@
         <h1><h:outputText value="#{phonenr.message}"/></h1>
         <h:form>    
             <h:dataTable var="eintrag" value="#{phonenr.numbersLst}" id="phoneList" rowClasses="phone1, phone2" columnClasses="phonelinks, phonerechts">
-                <h:column><h:outputText value="#{eintrag.mitarbeiter}"/></h:column>
+                <h:column><f:facet name = "header"><h4>Name</h4></f:facet>
+                    <h:outputText value="#{eintrag.nachname}, #{eintrag.vorname}"/></h:column>
                 <h:column>
+                    <f:facet name = "header"><h4>Telefonnummer</h4></f:facet>
                     <h:outputLink value="tel:#{eintrag.number}" styleClass="phoneLink">
-                        <h:outputText value="#{eintrag.number}"/>
+                        <i class="fas fa-phone"/><h:outputText value=" #{eintrag.number}"/>
                     </h:outputLink>
                 </h:column>
             </h:dataTable>

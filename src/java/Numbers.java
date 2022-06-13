@@ -27,6 +27,8 @@ public class Numbers implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String mitarbeiter;
+    private String vorname;
+    private String nachname;
     private String number;
     private String fax;
     
@@ -37,13 +39,16 @@ public class Numbers implements Serializable{
         
     }
     
-    public Numbers(String mitarbeiter, String number) {
-        this.mitarbeiter=mitarbeiter;
+    public Numbers(String nachname, String vorname, String number) {
+        this.nachname=nachname;
+        this.vorname=vorname;
         this.number=number;
     }
 
-    public Numbers(String mitarbeiter, String number, String fax) {
+    public Numbers(String mitarbeiter, String nachname, String vorname, String number, String fax) {
         this.mitarbeiter=mitarbeiter;
+        this.nachname=nachname;
+        this.vorname=vorname;
         this.number=number;
         this.fax=fax;
     }
@@ -56,6 +61,14 @@ public class Numbers implements Serializable{
     
     public String getMitarbeiter(){
         return mitarbeiter;
+    }
+    
+    public String getNachname(){
+        return nachname;
+    }
+    
+    public String getVorname(){
+        return vorname;
     }
     
     public String getNumber(){
@@ -74,6 +87,14 @@ public class Numbers implements Serializable{
     
     public void setMitarbeiter(String mitarbeiter){
         this.mitarbeiter=mitarbeiter;
+    }
+    
+    public void setNachname(String nachname){
+        this.nachname=nachname;
+    }
+    
+    public void setVorname(String vorname){
+        this.vorname=vorname;
     }
     
     public void setNumber(String number){
