@@ -39,7 +39,7 @@ public class Phonenr {
         String msg="";
         try{
             Query q;
-            q = em.createQuery("select a FROM Numbers a order by a.nachname desc");
+            q = em.createQuery("SELECT a FROM Numbers a order by a.nachname asc");
             List<Numbers> numbersResult = q.getResultList();
             
             return numbersResult;

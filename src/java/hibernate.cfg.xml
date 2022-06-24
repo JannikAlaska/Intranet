@@ -45,5 +45,7 @@ Contributor(s):
     <property name="hibernate.connection.url">jdbc:derby://localhost:1527/Intranet</property>
     <property name="hibernate.connection.username">berthold</property>
     <property name="hibernate.connection.password">ri1Nole#</property>
+    <property name="hibernate.connection.autocommit">true</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
   </session-factory>
 </hibernate-configuration>

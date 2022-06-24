@@ -1,0 +1,8 @@
+Errors:
+--> java.lang.RuntimeException: com.sun.faces.config.ConfigurationException: CONFIGURATION FAILED! java.util.concurrent.ExecutionException: java.lang.ExceptionInInitializerError 
+--> javax.persistence.PersistenceException: Unable to build entity manager factory
+
+
+Fixes:
+--> Connect manually to the database
+--> Clean & Build

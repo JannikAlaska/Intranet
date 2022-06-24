@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
     <link href="style.css" rel="stylesheet" type="text/css"/>
     <h:head>
         <link rel="icon" type="image/png" href="resources/images/wappen.png"/>
@@ -25,24 +26,37 @@
                 </h:outputLink>
             </h:panelGrid>
         
+        <h:form>
+            <p:breadCrumb model="#{menuBean.model}"/>
+        </h:form>
+        
         <h2>Telefonliste</h2><br/><br/>
-        <h1><a style="color: red" href="https://www.journaldev.com/7068/jsf-database-example-mysql-jdbc">siehe Hier für DB-Einbindung</a></h1>
-        <h1><h:outputText value="#{phonenr.message}"/></h1>
-        <h:form id="numbersList">    
-            <h:dataTable var="eintrag" value="#{phonenr.numbersLst}" id="phoneList" rowClasses="phone1, phone2" columnClasses="phonelinks, phonerechts">
-                <h:column><f:facet name = "header"><h4>Name</h4></f:facet>
-                    <h:outputText value="#{eintrag.nachname}, #{eintrag.vorname}"/></h:column>
-                <h:column>
-                    <f:facet name = "header"><h4>Telefonnummer</h4></f:facet>
+        <h:form id="numbersList">   
+            <!-- for h:dataTable use the followig attributes -> rowClasses="phone1, phone2" columnClasses="phonelinks, phonerechts" -->
+            <p:dataTable var="eintrag" value="#{phonenr.numbersLst}" styleClass="phoneList" paginator="true" rows="10" paginatorPosition="bottom" widgetVar="NumbersTable">
+                <p:column headerText="Name" sortBy="#{eintrag.nachname}" filterBy="#{eintrag.nachname}">
+                    <h:outputText value="#{eintrag.nachname}, #{eintrag.vorname}"/>
+                </p:column>
+                <p:column headerText="Telefonnummer" sortBy="#{eintrag.nachname}">
                     <h:outputLink value="tel:#{eintrag.number}" styleClass="phoneLink">
                         <i class="fas fa-phone"/><h:outputText value=" #{eintrag.number}"/>
                     </h:outputLink>
-                </h:column>
-            </h:dataTable>
+                </p:column>
+                <p:column headerText="Bereich" sortBy="#{eintrag.bereich}" filterBy="#{eintrag.bereich}" >
+                    <f:facet name="filter">
+                        <p:selectOneMenu value="#{bereiche.bereichLst}" onchange="PF('NumbersTable').filter()">
+                            <f:selectItem itemLabel="Bitte Bereich auswählen" itemValue="#{null}" noSelectionOption="true" />
+                            <f:selectItems value="#{eintrag.bereich.bereichLst}" />
+                        </p:selectOneMenu>
+                    </f:facet>
+                    <h:outputText value="#{eintrag.bereich.bereich}"/>
+                </p:column>
+            </p:dataTable>
         </h:form>
         <h:form>
             <h:commandLink id="neueTelefonnummer" action="#{navigationController.add()}"><i class="fas fa-plus"/> Telefonnummer hinzufügen</h:commandLink>
         </h:form>
+        <h1><h:outputText value="#{phonenr.message}"/></h1>
      </h:body>
 </html>
 

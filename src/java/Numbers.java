@@ -5,12 +5,15 @@
  */
 
 import java.io.Serializable;
+import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 
 /**
@@ -32,6 +35,10 @@ public class Numbers implements Serializable{
     private String number;
     private String fax;
     public Numbers newNumber = null;
+    @ManyToOne(targetEntity=Bereiche.class)
+    @JoinColumn(name="bereich_ID", referencedColumnName="id")
+    public Bereiche bereich;
+    public int bereich_id;
     
     /**
      * Creates a new instance of Numbers
@@ -86,6 +93,14 @@ public class Numbers implements Serializable{
         }   
         return this.newNumber;
     }
+         
+    public Bereiche getBereich(){
+        return bereich;
+    }
+         
+    public int getBereich_ID(){
+        return bereich_id;
+    }
     
     //*Setter-Methoden
     
@@ -120,5 +135,17 @@ public class Numbers implements Serializable{
         
         return null;
     }
+    
+    public void setBereich(Bereiche bereich){
+        this.bereich=bereich;
+    }
+    
+    public void setBereich_ID(int bereich_id){
+        this.bereich_id=bereich_id;
+    }
+    
+    
+    
+    
     
 }

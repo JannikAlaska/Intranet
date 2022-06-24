@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <link href="style.css" rel="stylesheet" type="text/css"/>
     <h:head>
         <script src="https://kit.fontawesome.com/c9fe651a5a.js" crossorigin="anonymous"></script>
@@ -36,6 +37,7 @@
                 <h:inputText id="author" value="#{artikelController.artikel.author}"/>
                 <h:outputLabel value="Nachricht" for="message"/>
                 <h:inputText id="message" value="#{artikelController.artikel.message}"/>
+                <!--<p:textEditor widgetVar="message" value="#{artikelController.artikel.message}"/>-->
             </h:panelGrid>
         </h:form>
     </h:body>

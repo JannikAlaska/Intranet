@@ -30,11 +30,14 @@ body{
 h1{
     font-size: 26px;
     color: white;
+
 }
 
 h2{
     font-size: 22px;
     color: white;
+    text-decoration: underline;
+
 }
 
 .link {
@@ -107,32 +110,43 @@ td.newsrechts{
     padding: 2% 4%; 
 }
 
-table#numbersList{
+table.phoneList{
     position: relative;
     width: 100%;
-    border-radius: 5px;
 }
 
 tr.phone1{
     color: black;
     position: relative;
     width: 100%;
-    /*margin: 0 10%; */
-    background: rgba(255,255,255, 0.6);
+    background: rgba(255,255,255, 0.5);
+    transition: 0.2s;
+    border-radius: 5px;
 }
 
 tr.phone2{
     color: black;
     position: relative;
     width: 100%;
-    /* margin: 0 10%; */
-    background: rgba(255,255,255, 0.4);
+    background: rgba(255,255,255, 0.3);
+    transition: 0.2s;
+    border-radius: 5px;
+}
+
+tr.phone1:hover{
+    background: rgba(255,255,255, 0.8);
+    transition: 0.2s ease-in-out;
+}
+
+tr.phone2:hover{
+    background: rgba(255,255,255, 0.8);
+    transition: 0.2s ease-in-out;
 }
 
 td.phonelinks{
     position: relative;
     text-align: left;
-
+    border-radius: 5px;
     padding:  1% 2%;
     color: white;
     font-weight: bold;
@@ -141,6 +155,7 @@ td.phonelinks{
 td.phonerechts{
     position: relative;
     text-align: right;
+    border-radius: 5px;
     width: 60%;
     padding: 1% 2%; 
 }
@@ -168,9 +183,15 @@ td.bodyrechts {
 }
 
 a.phoneLink{
-    position: relative;
+    display: inline-block;
     height: 100%;
     font-size: 16px;
+    color: black;
+}
+
+a.phoneLink:not(:hover){
+    color: black;
+    font-weight: normal;
 }
 
 .wappen {
@@ -249,6 +270,19 @@ b.menuerechts {
 }
 */
 
+.fa-1x{
+    display: inline-block;
+    position: relative;
+    background: transparent;
+    border: 0;
+    width: 5%;
+    color: white;
+}
+
+.ui-button-text{
+    font-size: 0px;
+}
+
 /**************************************************
 *
 * Animationen
@@ -256,17 +290,18 @@ b.menuerechts {
 **************************************************/
 
 
-a:hover, a:focus, a:active {
+a:hover, a:focus, a:active .fa-1x {
     color: #7E2833;
     opacity: 90%;
     text-decoration: none;
 }
 
-a:hover, a:focus, a:active {
+a:hover, a:focus, a:active .fa-1x {
     color: #7E2833;
     opacity: 90%;
     text-decoration: none;
 }
+
 
 a:not(:hover) {
     color: white;
