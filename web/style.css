@@ -65,7 +65,13 @@ td.rechts {
     text-align: right;
     width: 40%;
     padding-right: 5%;
-    padding-left: 30%;
+    padding-left: 22%;
+}
+
+a.headermenue{
+    margin: 5px;
+    font-size: 16px;
+    padding-left: 15px;
 }
 
 /**************************************************
@@ -79,6 +85,36 @@ td.rechts {
     font-size: 16px;
 }
 
+
+.ui-breadcrumb{
+    background: none !important; 
+    border: none !important;
+    color: white !important;
+}
+
+
+.ui-breadcrumb-items a.ui-icon-home {
+    color: white !important;
+    font-size: 14px !important;
+}
+
+body .ui-breadcrumb .ui-breadcrumb-items li:last-child .ui-menuitem-link .ui-menuitem-text {
+    color: white !important;
+    font-size: 14px !important;
+}
+
+.ui-breadcrumb .ui-breadcrumb-items li:not(.ui-breadcrumb-chevron):before {
+    color: white !important;
+    font-size: 14px !important;
+}
+
+.ui-breadcrumb-items a.ui-icon-home:hover {
+    color: #7E2833 !important;
+}
+
+body .ui-breadcrumb .ui-breadcrumb-items li:last-child .ui-menuitem-link .ui-menuitem-text:hover {
+    color: #7E2833 !important;
+}
 
 table.news1{
     color: black;

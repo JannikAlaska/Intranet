@@ -16,13 +16,13 @@ import javax.faces.bean.RequestScoped;
 
 
 public class navigationController {
-   public String menue1Link = "news?faces-redirect=true";
-   public String homeLink = "index?faces-redirect=true";
-   public String menue2Link = "commonDocuments?faces-redirect=true";
-   public String menue3Link = "phoneList?faces-redirect=true";
-   public String menue4Link = "newsManagement?faces-redirect=true";
+   public String menue1Link = "news.xhtml?faces-redirect=true";
+   public String homeLink = "index.xhtml?faces-redirect=true";
+   public String menue2Link = "commonDocuments.xhtml?faces-redirect=true";
+   public String menue3Link = "phoneList.xhtml?faces-redirect=true";
+   public String menue4Link = "newsManagement.xhtml?faces-redirect=true";
    public String menue5Link = "http://support/ticket/kb/index.php";
-   public String menue6Link = "editphonenr?faces-redirect=true";
+   public String menue6Link = "editphonenr.xhtml?faces-redirect=true";
    
    public String menue1Img = "fa-solid fa-newspaper fa-1x";
    public String homeImg;
@@ -56,7 +56,7 @@ public class navigationController {
       return menue1Link;
    }
    
-   public String home(){
+   public String getHomeLink(){
        return homeLink;
    }
    
@@ -124,11 +124,11 @@ public class navigationController {
        return homeName;
    }
    
-   public String getmenue2Name(){
+   public String getMenue2Name(){
        return menue2Name;
    }
    
-   public String getmenue3Name(){
+   public String getMenue3Name(){
        return menue3Name;
    }
    
