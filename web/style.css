@@ -102,6 +102,10 @@ body .ui-breadcrumb .ui-breadcrumb-items li:last-child .ui-menuitem-link .ui-men
     color: white !important;
     font-size: 14px !important;
 }
+.ui-breadcrumb .ui-breadcrumb-items li .ui-menuitem-link .ui-menuitem-text {
+    color: white !important;
+    font-size: 14px !important;
+}
 
 .ui-breadcrumb .ui-breadcrumb-items li:not(.ui-breadcrumb-chevron):before {
     color: white !important;

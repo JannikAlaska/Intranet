@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <link href="style.css" rel="stylesheet" type="text/css"/>
     <h:head>
         <script src="https://kit.fontawesome.com/c9fe651a5a.js" crossorigin="anonymous"></script>
@@ -10,20 +11,31 @@
     </h:head>
     <h:body styleClass="Bimage">
         
-            <h:panelGrid columns="3" columnClasses="links, mitte, rechts">
-            
+        <h:panelGrid columns="3" columnClasses="links, mitte, rechts">
+            <h:form>
+                <h:commandLink action="#{navigationController.getHomeLink()}">
+                    <h1><img src="resources/images/wappen.png" width="40px"></img> Intranet</h1> 
+                </h:commandLink>
+            </h:form>
+            <h:outputText value=""/>
+            <h:panelGrid columns="2">
+
                 <h:form>
-                    <h:commandLink action="#{navigationController.home()}">
-                        <h1><img src="resources/images/wappen.png" width="40px"></img> Intranet</h1> 
+                    <h:commandLink class="headermenue" title="logout" rendered="#{userLoginView.generalLoggedIn}" action="#{userLoginView.logout()}">
+                        Logout
                     </h:commandLink>
                 </h:form>
-
-                <h:outputText value=" " />
-                <h:outputLink class="link" value="http://support/ticket/" target="_blank">
-                    <i class="fas fa-headset"></i> Support
+                <h:outputLink class="headermenue" value="http://support/ticket/" target="_blank">
+                        <i class="fas fa-headset"></i> Support
                 </h:outputLink>
             </h:panelGrid>
+        </h:panelGrid>
         
+            <p:breadCrumb>
+                <p:menuitem value="#{navigationController.homeName}" url="#{navigationController.homeLink}"/>
+                <p:menuitem value="#{navigationController.menue1Name}" url="#{navigationController.menue1Link}"/>
+                <p:menuitem value="#{navigationController.menue4Name}" url="#{navigationController.menue4Link}"/>
+            </p:breadCrumb>
         <h2>Neuer News-Beitrag</h2><br/><br/>
         <h1 style="color:red"> HINWEIS! Einfacher über Datenbankanbindung mit Select und Insert, keine ArrayList mit Controller-Bean verwenden </h1>
         

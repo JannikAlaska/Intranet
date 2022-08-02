@@ -22,7 +22,12 @@ public class UserLoginView {
     private String password;
     public boolean generalLoggedIn=false;
     public boolean generalLoggedOut=true;
+    public String actualPage;
 
+    public String getActualPage() {
+        return actualPage;
+    }
+    
     public boolean getGeneralLoggedOut() {
         return generalLoggedOut;
     }
@@ -77,12 +82,18 @@ public class UserLoginView {
     }  
     
     public String logout(){
+        String actualPage;
         this.generalLoggedIn = false;
         this.generalLoggedOut = true;
         this.username = null;
         this.password = null;
         
         FacesContext context = FacesContext.getCurrentInstance();
-        return context.getViewRoot().getViewId() + "?faces-redirect=true";
+        actualPage= context.getViewRoot().getViewId();
+        if (actualPage.equals("/newsManagement.xhtml")){
+            return "news.xhtml?faces-redirect=true";
+        }
+        this.actualPage=actualPage;
+        return actualPage + "?faces-redirect=true";
     }
 }
