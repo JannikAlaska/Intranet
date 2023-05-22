@@ -19,21 +19,8 @@
             </h:form>
             <h:outputText value=""/>
             <h:panelGrid columns="4">
-                <script type="text/javascript">
-                    function handleLoginRequest(xhr, status, args) {
-                        if(args.validationFailed || !args.loggedIn) {
-                            PF('dlg').jq.effect("shake", {times:5}, 100);
-                        }
-                        else {
-                            PF('dlg').hide();
-                            $('#loginLink').fadeOut();
-                            document.location.reload(true);
-                        }
-                    }
-                </script>
-
-
-                <h:form>        
+                <h:form>
+                    <br/>
                     <h:outputLink value="javascript:void(0)" onclick="PF('dlg').show();" class="headermenue" rendered="#{userLoginView.generalLoggedOut}">
                         Login
                     </h:outputLink>
