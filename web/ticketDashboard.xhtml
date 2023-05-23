@@ -64,42 +64,13 @@
                 </h:outputLink>
             </h:panelGrid>
         </h:panelGrid>
+
         
-        <p:breadCrumb class="breadcrumbs">
+        <p:breadCrumb>
             <p:menuitem value="#{navigationController.homeName}" url="#{navigationController.homeLink}"/>
-            <p:menuitem value="#{navigationController.menue3Name}" url="#{navigationController.menue3Link}"/>
+            <p:menuitem value="#{navigationController.ticketDashboardName}" url="#{navigationController.ticketDashboardLink}"/>
         </p:breadCrumb>
 
-
-
-<!--Main Body-->        
-        <h2>Telefonliste</h2><br/><br/>
-        <h:form id="numbersList">   
-            <!-- for h:dataTable use the followig attributes -> rowClasses="phone1, phone2" columnClasses="phonelinks, phonerechts" -->
-            <p:dataTable var="eintrag" value="#{phonenr.numbersLst}" styleClass="phoneList" paginator="true" rows="10" paginatorPosition="bottom" widgetVar="NumbersTable">
-                <p:column headerText="Name" sortBy="#{eintrag.nachname}" filterBy="#{eintrag.nachname}">
-                    <h:outputText value="#{eintrag.nachname}, #{eintrag.vorname}"/>
-                </p:column>
-                <p:column headerText="Telefonnummer" sortBy="#{eintrag.nachname}">
-                    <h:outputLink value="tel:#{eintrag.number}" styleClass="phoneLink">
-                        <i class="fas fa-phone"/><h:outputText value=" #{eintrag.number}"/>
-                    </h:outputLink>
-                </p:column>
-                <p:column headerText="Bereich" sortBy="#{eintrag.bereich}" filterBy="#{eintrag.bereich}" >
-                    <f:facet name="filter">
-                        <p:selectOneMenu value="#{bereiche.bereichLst}" onchange="PF('NumbersTable').filter()">
-                            <f:selectItem itemLabel="Bitte Bereich auswählen" itemValue="#{null}" noSelectionOption="true" />
-                            <f:selectItems value="#{eintrag.bereich.bereichLst}" />
-                        </p:selectOneMenu>
-                    </f:facet>
-                    <h:outputText value="#{eintrag.bereich.bereich}"/>
-                </p:column>
-            </p:dataTable>
-        </h:form>
-        <h:form>
-            <h:commandLink id="neueTelefonnummer" action="#{navigationController.add()}"><i class="fas fa-plus"/> Telefonnummer hinzufügen</h:commandLink>
-        </h:form>
-        <h1><h:outputText value="#{phonenr.message}"/></h1>
-     </h:body>
+    </h:body>
 </html>
 

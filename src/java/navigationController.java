@@ -23,6 +23,8 @@ public class navigationController {
    public String menue4Link = "newsManagement.xhtml?faces-redirect=true";
    public String menue5Link = "http://support/ticket/kb/index.php";
    public String menue6Link = "editphonenr.xhtml?faces-redirect=true";
+   public String menue7Link = "https://zeusx.ilsenburg.local/zeusx";
+   public String ticketDashboardLink = "ticketDashboard.xhtml?faces-redirect=true";
    
    public String menue1Img = "fa-solid fa-newspaper fa-1x";
    public String homeImg;
@@ -31,6 +33,7 @@ public class navigationController {
    public String menue4Img;
    public String menue5Img = "fa-solid fa-brain fa-1x";
    public String menue6Img = "fa-solid fa-question fa-1x";
+   public String menue7Img = "fa-solid fa-umbrella-beach fa-1x";
    
    public String menue1Name = "News";
    public String homeName = "Home";
@@ -39,6 +42,8 @@ public class navigationController {
    public String menue4Name = "News-Eintrag hinzufügen";
    public String menue5Name = "Wissens-Datenbank";
    public String menue6Name = "Telefonnummer hinzufügen";
+   public String menue7Name = "Digitaler Urlaubschein & Digitaler Stundenzettel";
+   public String ticketDashboardName = "Ticket-Dashboard";
    
    public String menue1ImgName = menue1Img + " &nbsp; " + menue1Name;
    public String homeImgName;
@@ -47,6 +52,7 @@ public class navigationController {
    public String menue4ImgName = menue4Img + " &nbsp; " + menue4Name;
    public String menue5ImgName = menue5Img + " &nbsp; " + menue5Name;
    public String menue6ImgName = menue6Img + " &nbsp; " + menue6Name;
+   public String menue7ImgName = menue7Img + " &nbsp; " + menue7Name;
    
    
    /*****************************************
@@ -77,6 +83,14 @@ public class navigationController {
    
    public String getMenue6Link(){
        return menue6Link;
+   }
+   
+   public String getMenue7Link(){
+       return menue7Link;
+   }
+   
+   public String getTicketDashboardLink(){
+       return ticketDashboardLink;
    }
    
    
@@ -112,6 +126,10 @@ public class navigationController {
        return menue6Img;
    }
    
+   public String getMenue7Img(){
+       return menue7Img;
+   }
+   
    /*****************************************
    *Getter-Methoden für NAMEN
    *****************************************/
@@ -142,6 +160,14 @@ public class navigationController {
    
    public String getMenue6Name(){
        return menue6Name;
+   } 
+   
+   public String getMenue7Name(){
+       return menue7Name;
+   }  
+   
+   public String getTicketDashboardName(){
+       return ticketDashboardName;
    }  
    
    /*****************************************
@@ -174,5 +200,9 @@ public class navigationController {
    
    public String getMenue6ImgName(){
        return menue6ImgName;
+   }
+
+   public String getMenue7ImgName(){
+       return menue7ImgName;
    }
 }

@@ -17,14 +17,16 @@
     <h:body styleClass="Bimage">
         <h:panelGrid columns="3" columnClasses="links, mitte, rechts">
             <h:form>
-                <h:commandLink action="#{navigationController.home()}">
+                <h:commandLink action="#{navigationController.getHomeLink()}">
                     <h1><img src="resources/images/wappen.png" width="40px"></img> Intranet</h1> 
                 </h:commandLink>
             </h:form>
             <h:outputText value=""/>
-            <h:panelGrid columns="4">
-                <h:outputText value="<br/>Hallo&nbsp;#{userLoginView.username}" rendered="#{userLoginView.generalLoggedIn}"/>
-                 <h:form>
+            
+
+            <h:panelGrid columns="5">
+                <h:outputText value="&lt;br/&gt; Hallo&nbsp;#{userLoginView.username}" rendered="#{userLoginView.generalLoggedIn}" escape="false"/>
+                <h:form>
                     <br/>
                     <h:outputLink value="javascript:void(0)" onclick="PF('dlg').show();" class="headermenue" rendered="#{userLoginView.generalLoggedOut}">
                         Login
@@ -51,12 +53,14 @@
                 <h:form>
                     <br/>
                     <h:commandLink class="headermenue" title="logout" rendered="#{userLoginView.generalLoggedIn}" action="#{userLoginView.logout()}">
-                        <!--<f:ajax onevent="function(data){ if(data.status === 'success') window.open('index.xhtml?faces-redirect=true')}"/>-->
                         Logout
                     </h:commandLink>
                 </h:form>
-                <h:outputLink class="headermenue" value="http://support/ticket/" target="_blank">
-                        <i class="fas fa-headset"></i> Support
+                <h:outputLink class="headermenue" value="http://support/ticket/" rendered="#{userLoginView.generalLoggedOut}" target="_blank">
+                        <i class="fas fa-headset"></i><br/>Support
+                </h:outputLink>
+                <h:outputLink class="headermenue" value="#{navigationController.ticketDashboardLink}" rendered="#{userLoginView.generalLoggedIn}">
+                    <h:outputText value="&lt;br/&gt;#{navigationController.ticketDashboardName}" escape="false"/>
                 </h:outputLink>
             </h:panelGrid>
         </h:panelGrid>
@@ -97,7 +101,7 @@
                     </ul>
                 </nav>
             </ui:fragment>
- 
+          
             
             
             <h:outputLink styleClass="homepageLink" value="https://www.stadt-ilsenburg.de/" target="_blank">   
@@ -106,16 +110,17 @@
   
             
 
+
             <ui:fragment>
                 <nav>
                     <ul>
                       <li class="item" id="link4">
-                          <a class="brechts" href="#">
-                            Digitaler Urlaubschein &amp; Digitaler Stundenzettel
-                            &nbsp;
-                            <i class="fa-solid fa-umbrella-beach"></i>
-
-                          </a>
+                           <h:form>
+                              <h:commandLink styleClass="blinks" action="#{navigationController.getMenue7Link()}">
+                                <h:outputText value = "#{navigationController.menue7Name}"/> 
+                                <p:commandButton styleClass="#{navigationController.menue7Img}"/>
+                              </h:commandLink>
+                          </h:form>
                       </li>
                         
                         <h:outputLink styleClass="brechts" value="#{navigationController.getMenue5Link()}" target="__blank">
